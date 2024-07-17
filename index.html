@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rastreio Xpress - Home</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="flex-row">
+      <div class="logo flex-row">
+        <img src="Images/logo.png" alt="" />
+        <span>Rastreio Xpress</span>
+      </div>
+
+      <!-- Barra de navegação -->
+      <nav>
+        <ul class="flex-row">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="sobre-nos.html">Sobre Nós</a></li>
+          <li><a href="parceiros.html">Parceiros</a></li>
+          <li><a href="ajuda.html">Ajuda</a></li>
+        </ul>
+      </nav>
+
+      <!-- Botões de cadastro e login -->
+      <div class="button-container flex-row">
+        <button class="entrar">Entrar</button>
+        <button class="cadastrar">Cadastrar</button>
+      </div>
+    </header>
+
+    <main class="track-order flex-col">
+
+      <!-- Seção principal -->
+      <section class="flex-col">
+
+        <h1 class="title-main">Rastreie seu pedido!</h1>
+
+        <!-- Component que engloba o input e o botão de rastrear -->
+        <div class="track-component flex-row">
+          <input
+            type="text"
+            placeholder="Código de rastreamento"
+            class="track-input"
+          />
+          <button class="track-button">
+            <img src="Images/icon-local.png" class="icon" />
+            Rastrear
+          </button>
+        </div>
+      </section>
+
+      <!-- Imagem de background disposta no final da página -->
+      <img src="Images/boxes.svg" alt="" />
+    </main>
+  </body>
+</html>

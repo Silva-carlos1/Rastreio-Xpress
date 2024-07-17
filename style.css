@@ -1,0 +1,423 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Configuração das fontes */
+@font-face {
+  font-family: "Helvetica";
+  src: url("fonts/HelveticaRegular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("fonts/HelveticaNeueBold.otf") format("opentype");
+  font-weight: bold;
+}
+
+/* defini variáveis para reutilizar ao decorrer do código */
+:root {
+  --primary-color: #1a9047;
+  --secondary-color: #2bc866;
+  --accent-color: #004aad;
+}
+
+.title-main {
+  font-family: "Helvetica Neue", sans-serif;
+  color: var(--secondary-color);
+  font-size: 2.6rem;
+}
+
+/* Aqui eu defini algumas classes que irei utilizar frequentemente, que são as classes de layout */
+.flex-row {
+  display: flex;
+  align-items: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilo do Body que vai ser compartilhado com todas as páginas, já definindo a fonte */
+body {
+  display: flex;
+  font-family: "Helvetica", sans-serif;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 100%;
+}
+
+/*  Estilo do Main que vai ser compartilhado com todas as páginas */
+main {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+/*  Estilo do section Body que vai ser compartilhado com todas as páginas */
+section {
+  min-height: 100;
+}
+
+/* Aqui eu estilizei o header, header este que vai ser usado em todas as páginas*/
+header {
+  justify-content: space-between;
+  padding: 1px;
+  padding-inline: 25px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: #f0f0f0 1px solid;
+  position: sticky;
+}
+
+header > .logo {
+  width: 20%;
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--accent-color);
+  gap: 8px;
+}
+
+header > .logo > img {
+  width: 15%;
+}
+
+nav {
+  width: 30%;
+}
+
+nav ul {
+  list-style: none;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: var(--accent-color);
+}
+
+nav ul li a:hover {
+  color: var(--primary-color);
+}
+
+.button-container {
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.button-container > button {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.button-container > .entrar {
+  color: var(--secondary-color);
+  background-color: white;
+  border: var(--primary-color) 1px solid;
+  border-color: var(--primary-color);
+}
+
+.button-container > .entrar:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.button-container > .cadastrar {
+  background-color: var(--primary-color);
+  color: white;
+  border: var(--primary-color) 1px solid;
+}
+
+.button-container > .cadastrar:hover {
+  background-color: white;
+  color: var(--primary-color);
+}
+
+/* Aqui eu estilizei a página inicial, ou melhor, home */
+.track-order {
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.track-order > div:first-of-type {
+  max-height: 200px;
+}
+
+.track-component {
+  margin: 20px;
+  width: calc(100% + 110px);
+  max-width: 90vw;
+}
+
+.track-input {
+  flex: 8;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  
+  margin-right: 10px;
+  outline: none;
+}
+
+.track-input::placeholder {
+  color: #ccc;
+}
+
+.track-button {
+  flex: 2;
+  background-color: #64748b;
+  color: white;
+  border: none;
+  padding: 10px 18px 10px 26px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.track-button:hover {
+  background-color: #e0e0e0;
+}
+
+.icon {
+  height: 30px;
+  margin-right: 5px;
+}
+
+.track-order img {
+  width: 100%;
+  max-width: 950px;
+}
+
+/* Aqui eu estilizei a página sobre nós */
+.about-section {
+  margin-top: 20px;
+  flex: 1;
+}
+
+.about-section > p {
+  margin: 50px;
+}
+
+.container-features {
+  justify-content: space-evenly;
+  gap: 75px;
+  flex-wrap: wrap;
+}
+
+.card h3 {
+  margin-bottom: 30px;
+  margin-top: 30px;
+  color: var(--secondary-color);
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 330px;
+  max-height: 460px;
+  text-align: center;
+}
+
+.card > div {
+  width: 150px;
+  height: 150px;
+  margin: 20px;
+  object-fit: contain;
+}
+
+.about-section > div:last-child {
+  max-width: 920px;
+  margin-top: 50px;
+  gap: 20px;
+}
+
+.about-section > div:last-child h1 {
+  font-size: 1.8rem;
+}
+
+.about-section div button {
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.about-section div button:hover {
+  background-color: white;
+  color: var(--secondary-color);
+}
+
+/* Aqui eu estilizei a página parceiros */
+.parceiros {
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #2bc866;
+  color: white;
+}
+
+.parceiros h1 {
+  color: white;
+  line-height: calc(100% + 10px);
+}
+
+.parceiros div {
+  gap: 30px;
+  align-items: start;
+}
+
+.parceiros div:first-child {
+  width: 43%;
+  min-width: 400px;
+}
+
+.parceiros > div:first-child img {
+  width: 100%;
+}
+
+.parceiros > div:last-child {
+  min-width: 25%;
+  align-items: center;
+}
+
+.parceiros > div:last-child img {
+  height: 100%;
+}
+
+.parceiros::before,
+.parceiros::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: white;
+}
+
+.parceiros::before {
+  top: 0;
+  height: 60px;
+}
+.parceiros::after {
+  bottom: 0;
+  height: 100px;
+}
+
+/* Aqui eu estilizei a página de help, ou melhor ajuda */
+.help-section {
+  min-height: 100%;
+  width: 80%;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  flex-wrap: wrap;
+}
+
+.help-section h1 {
+  margin-bottom: 20px;
+}
+
+.help-section > div {
+  gap: 30px;
+  min-width: 500px;
+}
+
+.help-section > div:first-child {
+  width: 100%;
+  max-width: 900px;
+}
+
+.help-section > div:first-child > div:first-child {
+  width: 90%;
+}
+
+.help-section > div:last-child {
+  min-width: 25%;
+  align-items: center;
+}
+
+.container-help {
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.card-help h4 {
+  margin-bottom: 20px;
+  margin-top: 10px;
+  color: var(--secondary-color);
+}
+
+.card-help p, .card-help li {
+  font-size: 0.9rem;
+  line-height: calc(100% + 4px);
+}
+
+.card-help p {
+  margin-bottom: 20px;
+}
+
+.card-help ul {
+  margin-left: 14px;
+}
+
+.card-help {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 240px;
+  border: var(--secondary-color) 1px solid;
+  border-radius: 5px;
+  height: 360px;
+  padding: 40px 13px;
+}
+
+.card-help > div,
+.card-help img {
+  align-self: flex-start;
+  width: 40px;
+  height: 40px;
+}
+
+.slider-button {
+  position: absolute;
+  top: 50%;
+  background-color: white;
+  cursor: pointer;
+}
+
+.slider-button img {
+  width: 50px;
+}
+
+.slider-button.left {
+  left: -50px;
+}
+
+.slider-button.right {
+  right: -50px;
+}
